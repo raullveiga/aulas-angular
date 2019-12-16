@@ -1,0 +1,80 @@
+<div class="padding">
+    <button type="button">Buscar por Id</button>
+
+    <!-- <button type="button" (click)=findById()>Por id</button> -->
+    <input type="text" type="number" [(ngModel)]="inputId" (keyup)="findById()">
+
+
+    <div *ngIf="inputId != null; else elseBlock">
+
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{users[0].name}}</h5>
+                    <P class="card-title">{{users[0].username}}</P>
+                    <p class="card-text"><small class="text-muted">{{users[0].email}}</small></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <ng-template #elseBlock>
+
+        <div class="card-deck" *ngFor="let userItem of users">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{userItem.name}}</h5>
+                    <p class="card-text">{{userItem.username}}</p>
+                    <p class="card-text"><small class="text-muted">{{userItem.email}}</small></p>
+                </div>
+            </div>
+        </div>
+
+    </ng-template>
+
+
+
+
+    <!-- <div *ngIf="inputId != null; else elseBlock">
+
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{users.name}}</h5>
+                    <h3 class="card-title">{{users.username}}</h3>
+                    <p class="card-text"><small class="text-muted">{{user.email}}</small></p>
+                </div>
+            </div>
+        </div> -->
+    <!-- 
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{sPost.title}}</h5>
+                    <p class="card-text">{{sPost.body}}</p>
+                </div>
+            </div> -->
+
+    <!-- </div>
+    <ng-template #elseBlock> -->
+
+    <!-- <div class="card-">
+    
+                <div class="card" style="width: 18rem;" *ngFor="let postItem of posts">
+                    <div class="card-body">
+                        <h5 class="card-title">{{postItem.title}}</h5>
+                        <p class="card-text">{{postItem.body}}</p>
+                    </div>
+                </div>
+            </div> -->
+    <!-- <div class="card-deck" *ngFor="let postItem of posts">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{postItem.title}}</h5>
+                    <p class="card-text">{{postItem.body}}</p>
+                    <p class="card-text"><small class="text-muted">{{postItem.userId}}</small></p>
+                </div>
+            </div>
+        </div>
+    </ng-template> -->
+
+</div>

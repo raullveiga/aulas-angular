@@ -1,0 +1,50 @@
+<div class="padding">
+    <button type="button">Buscar por Id</button>
+
+    <!-- <button type="button" (click)=findById()>Por id</button> -->
+    <input type="text" type="number" [(ngModel)]="inputId" (keyup)="findById()">
+
+
+    <div *ngIf="inputId != null; else elseBlock">
+
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{sPost.title}}</h5>
+                    <p class="card-text">{{sPost.body}}</p>
+                    <p class="card-text"><small class="text-muted">{{sPost.userId}}</small></p>
+                </div>
+            </div>
+        </div>
+<!-- 
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{sPost.title}}</h5>
+                <p class="card-text">{{sPost.body}}</p>
+            </div>
+        </div> -->
+
+    </div>
+    <ng-template #elseBlock>
+
+        <!-- <div class="card-">
+
+            <div class="card" style="width: 18rem;" *ngFor="let postItem of posts">
+                <div class="card-body">
+                    <h5 class="card-title">{{postItem.title}}</h5>
+                    <p class="card-text">{{postItem.body}}</p>
+                </div>
+            </div>
+        </div> -->
+        <div class="card-deck" *ngFor="let postItem of posts">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{postItem.title}}</h5>
+                    <p class="card-text">{{postItem.body}}</p>
+                    <p class="card-text"><small class="text-muted">{{postItem.userId}}</small></p>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+</div>
