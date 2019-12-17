@@ -8,11 +8,11 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(){
+  getAll() {
     return this.http.get("https://jsonplaceholder.typicode.com/posts");
   }
 
-  getById(id: number){
+  getById(id: number) {
     return this.http.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
   }
 

@@ -1,0 +1,11 @@
+<input type="text" [(ngModel)]="id" (keyup)="listById()" >
+
+<table border = 1px *ngIf="id != null">
+    <tr>
+        <td>{{comments.postId}}</td>
+        <td>{{comments.id}}</td>
+        <td>{{comments.name}}</td>
+        <td>{{comments.email}}</td>
+        <td>{{comments.body}}</td>
+    </tr>
+</table>

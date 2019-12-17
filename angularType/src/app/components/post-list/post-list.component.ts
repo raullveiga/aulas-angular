@@ -18,17 +18,16 @@ export class PostListComponent implements OnInit {
   ngOnInit() {
     this.findAll();
   }
-  
-  
-  findAll(){
+
+
+  findAll() {
     this.PostService.getAll().subscribe((postOut: Array<Post>) => {
       this.posts = postOut;
     })
   }
 
-  findById(){
+  findById() {
     this.PostService.getById(this.inputId).subscribe((postOut: Post) =>
-    this.sPost = postOut);
+      this.sPost = postOut);
   }
-
 }

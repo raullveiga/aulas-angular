@@ -6,15 +6,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { 
-    
-  }
+  constructor(private http: HttpClient) {}
 
-  getAll(){
+  getAll() {
     return this.http.get("https://jsonplaceholder.typicode.com/users");
   };
 
-  getById(id: number){
+  getById(id: number) {
     return this.http.get(`https://jsonplaceholder.typicode.com/users/${id}`);
   }
 
