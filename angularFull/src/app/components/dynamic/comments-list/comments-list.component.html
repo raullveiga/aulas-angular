@@ -1,0 +1,44 @@
+<input type="number" [(ngModel)]="id" (keyup)="findById()">
+<!-- <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form> -->
+
+<div *ngIf="id != null ;else elseblock">
+    <table border=1px>
+        <tr>
+            <th>postId</th>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>body</th>
+        </tr>
+        <tr>
+            <td>{{comment.postId}}</td>
+            <td>{{comment.id}}</td>
+            <td>{{comment.name}}</td>
+            <td>{{comment.email}}</td>
+            <td>{{comment.body}}</td>
+        </tr>
+    </table>
+
+</div>
+
+<ng-template #elseblock>
+    <table border=1px>
+        <tr>
+            <th>postId</th>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>body</th>
+        </tr>
+        <tr *ngFor="let item of comments">
+            <td>{{item.postId}}</td>
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.body}}</td>
+        </tr>
+    </table>
+</ng-template>

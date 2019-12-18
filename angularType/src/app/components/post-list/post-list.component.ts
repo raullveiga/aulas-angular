@@ -19,7 +19,6 @@ export class PostListComponent implements OnInit {
     this.findAll();
   }
 
-
   findAll() {
     this.PostService.getAll().subscribe((postOut: Array<Post>) => {
       this.posts = postOut;
